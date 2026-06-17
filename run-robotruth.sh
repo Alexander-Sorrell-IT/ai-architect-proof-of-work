@@ -45,4 +45,4 @@ else
   printf '   %s%s%s%s\n' "$B" "$R" "$TESTS" "$RST"
 fi
 echo
-printf '%s\n' "${DIM}Same audit_diff() engine is imported by the web app, MCP server & API.${RST}"
+printf '%s\n' "${DIM}Same audit_diff() engine powers the web app, MCP server & API.${RST}"

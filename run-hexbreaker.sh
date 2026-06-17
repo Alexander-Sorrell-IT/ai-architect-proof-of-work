@@ -105,7 +105,8 @@ if rows:
 echo
 echo "      ${BGRN}${BOLD}Grade: F1 = 1.0  —  4/4 of Mr. Evil's deleted recycle-bin tools recovered${RST}"
 echo "      ${GRN}precision 1.0 · recall 1.0 · 0 false positives · chain+HMAC ✅${RST}"
-echo "      ${GRY}(NIST Q28 / recycle-bin question, n=5 runs — not a 31-question NIST F1)${RST}"
+echo "      ${GRY}(NIST Q28 / recycle-bin question, n=5 runs — recovery accuracy, no${RST}"
+echo "      ${GRY} planted decoys; not bait-resistance, not a 31-question NIST F1)${RST}"
 echo
 echo "${BCYN}══════════════════════════════════════════════════════════════════════${RST}"
 echo "${DIM}Fully offline. No API key, no network. The transcript, its signature,${RST}"

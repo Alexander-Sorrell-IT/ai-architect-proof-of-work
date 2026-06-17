@@ -2,9 +2,10 @@
 #
 # run-glass-box-alpha.sh — Glass-Box Alpha green-test demo (offline, no keys/RPC)
 #
-# WHAT THIS SHOWS: the full cross-stack test suite runs green — Foundry (Solidity)
-# + pytest (Python multi-agent backend) — proving the verifiable-receipt primitive
-# byte-for-byte across both stacks. No API keys, no LLM, no live RPC call.
+# WHAT THIS SHOWS: the cross-stack test suite runs green — Foundry (Solidity contract
+# suite) + pytest (Python multi-agent backend) — and the Python suite pins the
+# reasoning-receipt keccak byte-for-byte (the frozen golden receipt vector the deployed
+# anchor's verify() recomputes). No API keys, no LLM, no live RPC call.
 #
 set -euo pipefail
 
@@ -25,7 +26,7 @@ banner() {
   printf '\n%s\n' "${CYAN}    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${RESET}"
   printf '%s\n'   "${CYAN}    ┃${RESET}  ${BOLD}${WHITE}GLASS-BOX ALPHA  ·  the AI that hands you a receipt, not a story${RESET}  ${CYAN}┃${RESET}"
   printf '%s\n'   "${CYAN}    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${RESET}"
-  printf '%s\n\n' "${BOLD}${CYAN}▶ WHAT THIS SHOWS:${RESET} ${WHITE}the cross-stack suite runs green — ${BOLD}Foundry + pytest${RESET}${WHITE} — verifiable receipts proven byte-for-byte. No keys, no RPC, offline.${RESET}"
+  printf '%s\n\n' "${BOLD}${CYAN}▶ WHAT THIS SHOWS:${RESET} ${WHITE}the cross-stack suite runs green — ${BOLD}Foundry + pytest${RESET}${WHITE} — and pytest pins the reasoning-receipt keccak byte-for-byte. No keys, no RPC, offline.${RESET}"
 }
 
 step() { printf '\n%s▸ %s%s\n' "${BOLD}${YELLOW}" "$1" "${RESET}"; }

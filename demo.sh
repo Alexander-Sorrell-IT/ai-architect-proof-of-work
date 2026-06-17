@@ -60,17 +60,16 @@ for arg in "$@"; do
   esac
 done
 
+# The teleprompter (launched by record.sh) FOLLOWS the demo by reading this
+# state file: 0 = intro, 1..N = each tool, N+1 = close. No-op when RECORD_STATE
+# is unset (e.g. the public repo / a plain run).
+write_state() { [ -n "${RECORD_STATE:-}" ] && printf '%s' "$1" > "$RECORD_STATE" 2>/dev/null || true; }
+
 pause() {
-  # Synced-recording mode: wait for the teleprompter to signal the next beat
-  # (set DEMO_FIFO; the teleprompter writes one line per trigger). Can't desync.
-  if [ -n "${DEMO_FIFO:-}" ]; then
-    IFS= read -r _ < "$DEMO_FIFO" 2>/dev/null || true
-    echo; return
-  fi
   [ "$NO_PAUSE" -eq 1 ] && { echo; return; }
   [ -n "$ONLY" ] && { echo; return; }
   echo
-  printf "%s" "${YEL}    ▸ press ENTER for the next segment…${RST}"
+  printf "%s" "${YEL}    ▸ ${1:-press ENTER for the next tool…}${RST}"
   read -r _ || true
   echo
 }
@@ -98,6 +97,7 @@ run_segment() {
     return 0
   fi
   title_card "$idx" "$total" "$name" "$tag"
+  write_state "$idx"
   bash "$script"
 }
 
@@ -134,13 +134,14 @@ if [ -n "$ONLY" ]; then
     exit 2
   fi
 else
-  pause   # let the title slate breathe before segment 1
+  echo
+  pause "press ENTER to begin…"
   i=0
   for entry in "${SEGMENTS[@]}"; do
     i=$((i+1))
     name="${entry%%|*}"; tag="${entry#*|}"
     run_segment "$name" "$tag" "$i" "$TOTAL"
-    [ "$i" -lt "$TOTAL" ] && pause
+    pause   # pause after EVERY tool — narrate it, then ENTER for the next
   done
 fi
 

@@ -38,10 +38,10 @@ echo
 echo "${BCYN}    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${RST}"
 echo "${BCYN}    ┃${RST}  ${BOLD}TIERVA${RST} ${DIM}— parametric climate-insurance escrow, proven adversarial${RST}  ${BCYN}┃${RST}"
 echo "${BCYN}    ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫${RST}"
-echo "${BCYN}    ┃${RST}  ${BOLD}WHAT THIS SHOWS${RST}  Pacto.sol holds real USDC escrow that pays       ${BCYN}┃${RST}"
-echo "${BCYN}    ┃${RST}  drought victims only when 2 sensors agree for 20 days. The        ${BCYN}┃${RST}"
-echo "${BCYN}    ┃${RST}  adversarial Foundry suite proves a rogue oracle can't redirect,   ${BCYN}┃${RST}"
-echo "${BCYN}    ┃${RST}  double-pay, or drain a single dollar of it.                       ${BCYN}┃${RST}"
+echo "${BCYN}    ┃${RST}  ${BOLD}WHAT THIS SHOWS${RST}  Pacto.sol is a USDC-escrow that pays enrolled     ${BCYN}┃${RST}"
+echo "${BCYN}    ┃${RST}  beneficiaries only when 2 sensors agree on drought for 20 days.    ${BCYN}┃${RST}"
+echo "${BCYN}    ┃${RST}  The adversarial Foundry suite proves a rogue oracle can't          ${BCYN}┃${RST}"
+echo "${BCYN}    ┃${RST}  redirect, double-pay, or drain a single dollar of it.              ${BCYN}┃${RST}"
 echo "${BCYN}    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${RST}"
 echo
 

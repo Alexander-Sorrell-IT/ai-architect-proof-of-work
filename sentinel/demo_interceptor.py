@@ -78,7 +78,7 @@ def main() -> int:
     print(DIM + "-" * 84 + RESET)
     print(
         f"\n{BOLD}{GREEN}{unsafe_blocked}/{unsafe} out-of-policy actions BLOCKED"
-        f" before execution{RESET}{BOLD} — and the 2 legitimate calls ran through.{RESET}"
+        f" before execution{RESET}{BOLD} — and the 2 legitimate calls were allowed through the gate.{RESET}"
     )
     return 0
 
