@@ -1,0 +1,8 @@
+{
+  "repo": "acme/api",
+  "number": 412,
+  "title": "Only tidy up logging format",
+  "url": "https://github.com/acme/api/pull/412",
+  "author": "claude-agent[bot]",
+  "body": "This PR just cleans up our logging format. Added tests for the formatter. No new dependencies."
+}

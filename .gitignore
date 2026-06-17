@@ -1,0 +1,29 @@
+# Python venvs + caches (each tool rebuilds its venv on first run)
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.egg-info/
+**/*.egg-info/
+.pytest_cache/
+**/.pytest_cache/
+
+# JS / build artifacts
+node_modules/
+**/node_modules/
+.next/
+dist/
+build/
+
+# Foundry / solc caches + outputs
+out/
+**/out/
+cache/
+**/cache/
+.svm/
+broadcast/**/dry-run/
+
+# OS / editor
+.DS_Store
+*.log
