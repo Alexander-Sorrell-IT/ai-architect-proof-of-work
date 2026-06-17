@@ -1,0 +1,36 @@
+.env
+.env.local
+node_modules/
+.next/
+out/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+
+# Foundry (scope to contracts/ only — must NOT ignore frontend/lib/)
+contracts/cache/
+contracts/out/
+contracts/lib/
+contracts/broadcast/run-*/
+contracts/broadcast/*/run-*/
+
+# Runs
+runs/
+receipts/
+*.log
+
+# Internal strategy — NEVER commit to the public repo (competitors/judges read it)
+BUILD-PLAN-CRITERIA.md
+MASTER-PLAN.md
+GLASS-BOX-ARENA.md
+GAP-PLAN.md
+GAME-PLAN.md
+docs/dorahacks-submission.md
+
+# Build caches
+frontend/tsconfig.tsbuildinfo
+.vercel
+flash_vs_pro_divergence.py

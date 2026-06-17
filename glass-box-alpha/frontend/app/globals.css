@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background: theme('colors.bg');
+    color: rgb(229 229 234);
+    min-height: 100vh;
+  }
+  * {
+    border-color: theme('colors.border');
+  }
+
+  /* Visible keyboard focus ring for every interactive control — buttons, links,
+     inputs, and the Ring's focusable <g> ribbons. accentHover (#9173ff) carries
+     enough luminance against the #0a0a0f / #13131a surfaces to read clearly. */
+  :focus-visible {
+    outline: 2px solid theme('colors.accentHover');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Honor prefers-reduced-motion globally: neutralizes the Tailwind
+     reveal-pop / reasoning-fade animations, the live pulse dot, and smooth
+     scrolling for users who opt out of motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-border rounded-xl;
+  }
+  .panel-interactive {
+    @apply panel hover:bg-panelHover transition-colors duration-150;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono;
+  }
+  .button-primary {
+    @apply bg-accent hover:bg-accentHover text-white px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+}

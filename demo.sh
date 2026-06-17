@@ -44,6 +44,8 @@ fi
 # Order: strongest-first. Each entry = "project|one-line tagline".
 SEGMENTS=(
   "hexbreaker|Signed, tamper-evident evidence-of-record over an AI DFIR agent"
+  "glass-box-alpha|Verifiable AI reasoning — 135 cross-stack tests, contracts source-verified on-chain"
+  "tierva|Secure payout contract — 26 adversarial tests prove funds can't be redirected"
   "robotruth|Deterministic PR auditor — catches an agent lying about its diff"
   "sentinel|Pre-action interceptor — blocks out-of-policy agent tool calls"
 )
@@ -59,6 +61,12 @@ for arg in "$@"; do
 done
 
 pause() {
+  # Synced-recording mode: wait for the teleprompter to signal the next beat
+  # (set DEMO_FIFO; the teleprompter writes one line per trigger). Can't desync.
+  if [ -n "${DEMO_FIFO:-}" ]; then
+    IFS= read -r _ < "$DEMO_FIFO" 2>/dev/null || true
+    echo; return
+  fi
   [ "$NO_PAUSE" -eq 1 ] && { echo; return; }
   [ -n "$ONLY" ] && { echo; return; }
   echo
@@ -104,7 +112,7 @@ echo "${BCYN} ██║  ██║███████╗███████�
 echo "${BCYN} ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝${RST}"
 echo
 echo "                ${BWHT}SORRELL${RST}  ${DIM}·${RST}  ${BOLD}LIVE DEMO${RST}  ${DIM}·${RST}  ${CYN}AI Security & Eval${RST}"
-echo "        ${GRY}Three execution-grounded tools. Every verdict is proven, not asserted.${RST}"
+echo "        ${GRY}Five execution-grounded tools. Every verdict is proven, not asserted.${RST}"
 echo "        ${GRY}All offline — no API keys, no network, no secrets at runtime.${RST}"
 echo
 
@@ -122,7 +130,7 @@ if [ -n "$ONLY" ]; then
   done
   if [ "$found" -eq 0 ]; then
     echo "${RED}    no such segment: $ONLY${RST}" >&2
-    echo "${GRY}    available: hexbreaker codecrusher robotruth sentinel${RST}" >&2
+    echo "${GRY}    available: hexbreaker glass-box-alpha tierva robotruth sentinel${RST}" >&2
     exit 2
   fi
 else
