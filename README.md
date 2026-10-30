@@ -63,8 +63,5 @@ Rules **ALLOW / BLOCK** on every tool call an AI agent attempts, *before* it exe
 
 ---
 
-## Also: codecrusher *(private — available on request)*
-An adversarial smart-contract security pipeline (~9.3k LOC, 188 tests): static scanners feed an exploit synthesizer that auto-generates self-contained Foundry PoCs, confirming a finding only behind a real `forge [PASS]` — and rejecting a CEI-safe patched twin so it never rubber-stamps. Kept private; happy to demo it live.
-
 ## The thesis
 The model proposes; **execution disposes.** A static flag is a hypothesis — a `forge [PASS]`, a signed transcript, or a deterministic grade is proof. That principle runs through every tool here.
