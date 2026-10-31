@@ -3,7 +3,7 @@ name = "robotruth-mcp"
 version = "0.1.0"
 description = "RoboTruth MCP server — did the robot lie? Audit a GitHub PR inside your agent."
 requires-python = ">=3.11"
-dependencies = ["robotruth", "mcp>=1.2"]
+dependencies = ["robotruth", "mcp>=1.2,<2"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
